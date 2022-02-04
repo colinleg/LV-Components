@@ -5,32 +5,47 @@ const autoprefixer = require('autoprefixer');
 const tailwindcss = require('tailwindcss');
 const cleanCSS = require('gulp-clean-css');
 
-
-// Création de la tache Gulp, qui chargera tous les plugins de postcss
-function taskPostcss() {
-
+function run() {
     const plugins = [
         
         tailwindcss,
         autoprefixer,
 
     ];
-    // on précise bien pour ne pas avoir de boucle, les enfants DIRECT de style/
+
     return gulp.src('./src/style/*.css')
         .pipe(postcss(plugins))
-        .pipe(gulp.dest('./src/dest'));
-
+        .pipe(gulp.dest('./src/dest'))
+        .pipe(cleanCSS())
+        .pipe(rename(function(path){
+            return {
+                dirname: '',
+                basename: path.basename + ('-min'),
+                extname: '.css'
+            }
+        }))
+        .pipe(gulp.dest('./dist/style'))
+        .pipe(gulp.dest('./dev'))
 }
 
-// Création d'une tache Gulp, qui surveille les changement des fichiers css, et envoie a postcss
-gulp.task('watch', () => {
-    gulp.watch('./src/style/**/*.css', taskPostcss)
-});
+/** Tâche Gulp permettant de : 
+- compiler tailwindcss en css natif
+- minifier ce css natif
+- l'exporter dans /dist
+- l'exporter dans /dev
+ */
 
-gulp.task('minify', () => {
-    return gulp.src('./src/dest/*css')
+gulp.task('run', () => {
+    gulp.watch('./src/lib-components/*.vue', run )
+
+/** Pour minifier seulement à partir de /dest */
+
+gulp.task('minifyOnly', () => {
+    return gulp.src('./src/dest/*.css')
         .pipe(cleanCSS())
         .pipe(rename('style.min.css'))
         .pipe(gulp.dest('./dist/style'))
+
+})
 
 })

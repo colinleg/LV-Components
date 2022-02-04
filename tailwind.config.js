@@ -1,6 +1,7 @@
 module.exports = {
-    mode: 'jit',
+    // mode: 'jit',
     purge: ['./src/**/*.vue', './index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    // purge: [],
     darkMode: 'class',
     theme: {
         minHeight: {

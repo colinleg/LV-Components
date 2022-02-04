@@ -1,0 +1,443 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** Transitions */
+
+/* #region *** slideLeft **** */
+
+.slideLeft-enter-active {
+    transition: transform 1s ease-in-out, opacity 1.8s ease-in;
+}
+
+.slideLeft-leave-active {
+    transition: transform .2s ease;
+}
+
+.slideLeft-enter-from {
+    transform: translateX(-100vw);
+    opacity: 0;
+}
+
+.slideLeft-enter-to {
+    transform: translateX('0');
+    opacity: 1;
+}
+
+.slideLeft-leave-to {
+    transform: translateX(100vw);
+}
+
+
+/* #endregion */
+
+/* #region *** slideLeftShort **** */
+
+.shortSlideLeft-enter-active {
+    transition: transform .7s ease-in-out, opacity 1s ease-in;
+}
+
+.shortSlideLeft-leave-active {
+    transition: transform .5s ease-in-out, opacity 1s ease;
+}
+
+.shortSlideLeft-enter-from {
+    transform: translateX(-10vw);
+    opacity: 0;
+}
+
+.shortSlideLeft-enter-to {
+    transform: translateX('0');
+    opacity: 1;
+}
+
+.shortSlideLeft-leave-to {
+    transform: translateX(10vw);
+    opacity: 0;
+}
+
+/* #endregion */
+
+/* #region *** slideLikeMobile **** */
+
+.slideLikeMobile-enter-active {
+    transition: transform .5s .5s, opacity 1s .5s ease-in;
+}
+
+.slideLikeMobile-leave-active {
+    transition: transform .5s , opacity 1s ease;
+}
+
+.slideLikeMobile-enter-from {
+    transform: translateX(-10vw);
+    opacity: 0;
+}
+
+.slideLikeMobile-enter-to {
+    transform: translateX('0');
+    opacity: 1;
+}
+
+.slideLikeMobile-leave-to {
+    transform: translateX(10vw);
+    opacity: 0;
+}
+
+/* #endregion */
+
+/* #region *** slideRight *** */
+
+.slideRight-enter-active {
+    transition: transform .7s ease-out;
+}
+
+.slideRight-leave-active {
+    transition: transform .2s ease;
+}
+
+.slideRight-enter-from {
+    transform: translateX(30vw);
+}
+
+.slideRight-enter-to {
+    transform: translateX('0');
+}
+
+.slideRight-leave-to {
+    transform: translateX(-100vw);
+}
+
+
+/* #endregion */
+
+
+/* #region *** Slide Bottom to Top *** */
+
+.slideTop-enter-active {
+    transition: transform .7s, opacity 2s;
+}
+
+.slideTop-leave-active {
+    transition: transform .2s, opacity .2s;
+}
+
+.slideTop-enter-from {
+    transform: translateY(10vh);
+    opacity: 0;
+}
+
+.slideTop-enter-to {
+    transform: translateY('0');
+    opacity: 1;
+}
+
+.slideTop-leave-to {
+    transform: translateY(-10vh);
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+
+
+/* #region *** Slide Bottom to Top with delay *** */
+
+.slideTopwD-enter-active {
+    transition: all .7s 2s ease;
+    /* transition-delay: .7s; */
+}
+
+.slideTopwD-leave-active {
+    transition: transform .2s, opacity .2s;
+}
+
+.slideTopwD-enter-from {
+    transform: translateY(10vh);
+    opacity: 0;
+}
+
+.slideTopwD-enter-to {
+    transform: translateY('0');
+    opacity: 1;
+}
+
+.slideTopwD-leave-to {
+    transform: translateY(-10vh);
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+/* #region *** custom select Transition *** */
+
+.customSelect-enter-active {
+    transition: transform .7s, opacity 2s;
+}
+
+.customSelect-leave-active {
+    transition: transform .2s, opacity .2s;
+}
+
+.customSelect-enter-from {
+    transform: translateY(-10vh);
+    opacity: 0;
+}
+
+.customSelect-enter-to {
+    transform: translateY('0');
+    opacity: 1;
+}
+
+.customSelect-leave-to {
+    transform: scale(0);
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+/* #region *** Scale *** */
+
+.scale-enter-active {
+    transition: transform .7s ease-out, opacity .2s;
+    transition-delay: .5s;
+}
+
+.scale-leave-active {
+    transition: opacity .7s ease;
+}
+
+.scale-enter-from {
+    transform: scale(2);
+}
+
+.scale-enter-to {
+    transform: scale(1);
+}
+
+
+/* agit sur la page d'avant */
+
+.scale-leave-to {
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+
+/* #region *** fade *** */
+
+.fade-enter-active {
+    transition: opacity 2s ease-out;
+}
+
+.fade-leave-active {
+    transition: opacity 2s ease-out;
+}
+
+.fade-enter-from {
+    opacity: 0;
+}
+
+.fade-enter-to {
+    opacity: 1;
+}
+
+.fade-leave-from {
+    opacity: 1
+}
+
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+/* #region *** fastFade *** */
+
+.fastFade-enter-active {
+    transition: opacity .5s ease-out;
+}
+
+.fastFade-leave-active {
+    transition: opacity .5s ease-out;
+}
+
+.fastFade-enter-from {
+    opacity: 0;
+}
+
+.fastFade-enter-to {
+    opacity: 1;
+}
+
+.fastFade-leave-from {
+    opacity: 1
+}
+
+.fastFade-leave-to {
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+
+
+/* #region *** slideRoll *** */
+
+.slideRoll-enter-active {
+    transition: transform 1.4s ease-out;
+}
+
+.slideRoll-enter-from {
+    transform: translateX(-100vw) rotate(-500deg);
+}
+
+.slideRoll-enter-to {
+    transform: translateX(0) rotate(0);
+}
+
+
+/* #endregion */
+
+
+/* #region *** fadeMask*** */
+
+.fadeMask-enter-active {
+    transition: opacity .5s ease-in-out;
+}
+
+.fadeMask-leave-active {
+    transition: opacity .4s ease-in-out;
+}
+
+.fadeMask-enter-from {
+    opacity: 0;
+}
+
+.fadeMask-enter-to {
+    opacity: 1;
+}
+
+.fadeMask-leave-to {
+    opacity: 0;
+}
+
+
+/* #region *** ScaleFrom0 *** */
+
+.scale0-enter-active {
+    transition: transform .8s ease-in-out;
+    /* transition-delay: .2s; */
+}
+
+.scale0-leave-active {
+    transition: opacity .7s ease-in;
+}
+
+.scale0-enter-from {
+    transform: scale(0);
+}
+
+.scale0-enter-to {
+    transform: scale(1);
+}
+
+
+/* agit sur la page d'avant */
+
+.scale0-leave-to {
+    opacity: 0;
+}
+
+
+/* #endregion */
+
+
+/* #region mainDomain */
+
+.mainDomain-enter-active {
+    transition: transform 2s ease, opacity 2s ease-in-out;
+}
+
+.mainDomain-leave-active {
+    transition: transform 2s;
+}
+
+.mainDomain-enter-from {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.mainDomain-enter-to {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.mainDomain-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mainDomain-leave-to {
+    opacity: 0;
+    transform: translateY(2);
+}
+
+
+/* #endregion  */
+
+
+/* #region *** modalTransition *** */
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: transform .2s ease-in-out;
+    transition-delay: .2s;
+}
+
+
+/* .modal-leave-active {
+    transition: transform .7s ease-in;
+} */
+
+.modal-enter-from,
+.modal-leave-to {
+    transform: scaleY(0);
+}
+
+.modal-enter-to,
+.modal-leave {
+    transform: scaleY(1);
+}
+
+
+/* #endregion */
+
+
+/* .fadeMask-enter-active {
+    animation: blueFade 2s;
+}
+
+@keyframes blueFade{
+    0%{
+
+    opacity: 0;
+    }
+    50%{
+
+    opacity: 50%;
+    }
+    100%{
+
+    opacity:100%;
+    }
+} */
+
+
+/* #endregion */

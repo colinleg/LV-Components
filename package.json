@@ -1,6 +1,6 @@
 {
   "name": "lv_components",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/colinleg_lib.ssr.js",
   "browser": "dist/colinleg_lib.esm.js",
@@ -24,6 +24,7 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "8.0",
     "gulp-rename": "^2.0.0",
+    "merge-stream": "^2.0.0",
     "rollup-plugin-import-css": "^3.0.2"
   },
   "devDependencies": {

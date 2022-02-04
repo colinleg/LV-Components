@@ -32,7 +32,7 @@ npm i lv_components
 main.js
 ```
 import { lvBtn as btn } from 'lv_components'
-import 'colinleg_lib/dist/style.min.css'
+import 'lv_components/dist/style/style.min.css'
 ```
 
 ```
